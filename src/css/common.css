@@ -1,6 +1,13 @@
 .fengche{
-    background-color: brown;
     width: 500px;
     height: 500px;
     margin: 0 auto;
+    background-image: url("../img/timg.jpg");
+    background-size: cover;
+}
+.hongbao{
+    width: 100px;
+    height: 100px;
+    background-image: url("../img/hongbao.gif");
+    background-size: cover;
 }

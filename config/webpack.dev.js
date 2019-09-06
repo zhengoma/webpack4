@@ -18,7 +18,17 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']//处理css
-            }
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        outputPath: 'images/',//输出到images文件夹
+                        limit: 8*1024  //是把小于8KB的文件打成Base64的格式，写入JS
+                    }
+                }]
+            },
         ]
     },
     // 对应的插件

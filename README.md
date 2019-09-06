@@ -34,3 +34,10 @@ one by one step to make a system
 - 创建webpack配置文件
 > mkdir config
 > touch config/webpack.dev.js
+
+***
+
+- 安装html-webpack-plugin
+> npm install html-webpack-plugin --save-dev
+- 安装webpack webpack-cli
+> npm install webpack webpack-cli --save-dev

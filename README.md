@@ -41,3 +41,8 @@ one by one step to make a system
 > npm install html-webpack-plugin --save-dev
 - 安装webpack webpack-cli
 > npm install webpack webpack-cli --save-dev
+
+***
+
+- 删除指定文件 使用插件clean-webpack-plugin，删除指定文件
+> npm install clean-webpack-plugin --save-dev

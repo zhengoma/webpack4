@@ -46,3 +46,8 @@ one by one step to make a system
 
 - 删除指定文件 使用插件clean-webpack-plugin，删除指定文件
 > npm install clean-webpack-plugin --save-dev
+
+***
+
+- 安装webpack-dev-server 热更新
+> npm install webpack-dev-server --save-dev

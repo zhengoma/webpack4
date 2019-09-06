@@ -51,3 +51,8 @@ one by one step to make a system
 
 - 安装webpack-dev-server 热更新
 > npm install webpack-dev-server --save-dev
+
+***
+
+- 安装style-loader， css-loader
+> npm install style-loader css-loader --save-dev

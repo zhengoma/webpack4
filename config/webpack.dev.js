@@ -10,11 +10,16 @@ module.exports = {
     // 出口文件
     output: {
         filename: "[name].bundle.[hash].js",//[hash]会在后面生成随机hash值
-        path: path.resolve('dist')  // 打包后的目录，必须是绝对路径 //path.join(__dirname, "dist")会打到配置文件所在目录下
+        path: path.resolve('dist')  // 打包后的目录，必须是绝对路径
     },
     // 处理对应模块
     module: { 
-        rules: []
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']//处理css
+            }
+        ]
     },
     // 对应的插件
     plugins:[

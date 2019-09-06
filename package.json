@@ -1,0 +1,20 @@
+{
+  "name": "webpack4demo",
+  "version": "1.0.0",
+  "description": "<!--  * @Description: In User Settings Edit  * @Author: zhengoma  * @Date: 2019-09-06 15:06:43  * @LastEditTime: 2019-09-06 15:21:04  * @LastEditors: Please set LastEditors  --> # webpack4demo one by one step to make a system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhengoma/webpack4demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhengoma/webpack4demo/issues"
+  },
+  "homepage": "https://github.com/zhengoma/webpack4demo#readme"
+}

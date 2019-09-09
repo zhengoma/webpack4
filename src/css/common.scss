@@ -14,5 +14,8 @@
 #warp{
     .btn{
         background-color: red;
+        transform: rotate(350deg);
+        transition: transform;
+        display: flex;
     }
 }

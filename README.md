@@ -80,3 +80,9 @@ one by one step to make a system
 - Sass
 > npm install  node-sass --save-dev 
 > npm install  sass-loader --save-dev
+
+***
+
+- 安装postcss自动处理CSS3属性前缀
+> npm install --save-dev postcss-loader autoprefixer
+> touch postcss.config.js

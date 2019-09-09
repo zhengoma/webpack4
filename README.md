@@ -74,3 +74,9 @@ one by one step to make a system
 > npm install webpack-bundle-analyzer -D
 - 卸载webpack-bundle-analyzer
 > npm uninstall webpack-bundle-analyzer -D
+
+***
+
+- Sass
+> npm install  node-sass --save-dev 
+> npm install  sass-loader --save-dev

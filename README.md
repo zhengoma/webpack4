@@ -61,3 +61,14 @@ one by one step to make a system
 
 - 安装url-loader, file-loader
 > npm install url-loader file-loader --save-dev
+
+***
+
+- splitChunks 代码分割
+- 代码分割功能仅针对入口文件；
+- chunks: async表示只从异步加载得模块（动态加载import() ）里面进行拆分; initial表示只从入口模块进行拆分; all表示以上两者都包括
+- minChunks: 对多个入口文件的重复引用的重用次数，不是一个入口文件内子模块的重用次数。子模块重用时打包只会打1份，这是ES Module的模块化
+- 推荐看这篇文章 [链接](https://juejin.im/post/5c08fe7d6fb9a04a0d56a702)
+
+- 展示出打包后的各个bundle所依赖的模块
+> npm install webpack-bundle-analyzer -D

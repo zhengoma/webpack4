@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');//引入html-webpack-plugin
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');//引入clean-webpack-plugin ,3.0开始需要这样写
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpack = require("webpack");
 module.exports = {
     // 入口文件
@@ -39,6 +40,7 @@ module.exports = {
         }),
         new CleanWebpackPlugin(), //3.0之前参数时数组，3.0之后参数时对象
         new webpack.HotModuleReplacementPlugin(), //热更新
+        new BundleAnalyzerPlugin(),
     ],
     // 开发服务器配置
     devServer: { //配置此静态文件服务器，可以用来预览打包后项目
@@ -49,6 +51,32 @@ module.exports = {
         port: 9090,//端口号
         compress: true//开发服务器是否启动gzip等压缩
     }, 
+    optimization: {
+        splitChunks: {
+            chunks: 'async',
+            minSize: 30000,//这里定义最小字节
+            minChunks: 1,
+            maxAsyncRequests: 5,
+            maxInitialRequests: 3,
+            automaticNameDelimiter: '~',
+            name: true,
+            cacheGroups: {
+                commons: {  // 抽离自己写的公共代码
+                    chunks: "initial", //async表示只从异步加载得模块（动态加载import() ）里面进行拆分; initial表示只从入口模块进行拆分; all表示以上两者都包括
+                    name: "common", // 打包后的文件名，任意命名
+                    minChunks: 1,
+                    minSize: 0 // 只要超出0字节就生成一个新包
+                },
+                vendor: {   // 抽离第三方插件
+                    test: /node_modules/,   // 指定是node_modules下的第三方包
+                    chunks: 'initial',
+                    name: 'vendor',  // 打包后的文件名，任意命名
+                    // 设置优先级，防止和自定义的公共代码提取时被覆盖，不进行打包
+                    priority: 10
+                },
+            }
+        },
+    },
     // 模式配置
     mode: 'development'
 

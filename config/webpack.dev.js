@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');//引入html-webpack-plugin
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');//引入clean-webpack-plugin ,3.0开始需要这样写
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpack = require("webpack");
 module.exports = {
     // 入口文件
@@ -40,7 +39,6 @@ module.exports = {
         }),
         new CleanWebpackPlugin(), //3.0之前参数时数组，3.0之后参数时对象
         new webpack.HotModuleReplacementPlugin(), //热更新
-        new BundleAnalyzerPlugin(),
     ],
     // 开发服务器配置
     devServer: { //配置此静态文件服务器，可以用来预览打包后项目

@@ -99,3 +99,8 @@ one by one step to make a system
 - 转义ES6 babel版本要对应
 > npm i babel-core@6.26.3 babel-loader@7.1.5 babel-preset-env babel-preset-stage-0 -D
 > touch .babelrc
+
+***
+
+- 页面img引用图片
+> npm i html-withimg-loader -D

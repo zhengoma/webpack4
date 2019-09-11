@@ -48,6 +48,10 @@ module.exports = {
                 include: /src/,          // 只转化src目录下的js
                 exclude: /node_modules/  // 排除掉node_modules，优化打包速度
             },
+            {
+                test: /\.(htm|html)$/,
+                use: 'html-withimg-loader'
+            },
         ]
     },
     // 对应的插件

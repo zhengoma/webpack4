@@ -93,3 +93,9 @@ one by one step to make a system
 > npm i extract-text-webpack-plugin@next --save-dev
 - 消除冗余css
 > npm i purifycss-webpack purify-css glob -D
+
+***
+
+- 转义ES6 babel版本要对应
+> npm i babel-core@6.26.3 babel-loader@7.1.5 babel-preset-env babel-preset-stage-0 -D
+> touch .babelrc

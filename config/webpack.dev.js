@@ -42,6 +42,12 @@ module.exports = {
                     use: ['css-loader', 'postcss-loader', 'sass-loader']
                 }),
             },
+            {
+                test: /\.js$/,
+                use: 'babel-loader',
+                include: /src/,          // 只转化src目录下的js
+                exclude: /node_modules/  // 排除掉node_modules，优化打包速度
+            },
         ]
     },
     // 对应的插件

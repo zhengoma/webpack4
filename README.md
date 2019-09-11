@@ -104,3 +104,8 @@ one by one step to make a system
 
 - 页面img引用图片
 > npm i html-withimg-loader -D
+
+***
+
+- JS压缩
+> npm install uglifyjs-webpack-plugin --save-dev

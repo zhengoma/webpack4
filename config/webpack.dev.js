@@ -5,6 +5,7 @@ const webpack = require("webpack");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const purifycssWebpack = require('purifycss-webpack');
 const glob = require('glob');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
     // 入口文件
     entry: {
@@ -79,6 +80,7 @@ module.exports = {
         new purifycssWebpack({ //消除冗余css,一定要放在htmlWebpackPlugin后面
             paths: glob.sync(path.resolve('*.html'))
         }),
+        new UglifyJsPlugin(), //JS压缩
     ],
     // 开发服务器配置
     devServer: { //配置此静态文件服务器，可以用来预览打包后项目

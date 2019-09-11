@@ -2,6 +2,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');//引入html-webpack-plugin
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');//引入clean-webpack-plugin ,3.0开始需要这样写
 const webpack = require("webpack");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const purifycssWebpack = require('purifycss-webpack');
+const glob = require('glob');
 module.exports = {
     // 入口文件
     entry: {
@@ -17,7 +20,10 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']//处理css
+                loader: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'postcss-loader', 'sass-loader']
+                }),
             },
             {
                 test: /\.(png|jpg|gif)$/,
@@ -31,7 +37,10 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+                loader: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'postcss-loader', 'sass-loader']
+                }),
             },
         ]
     },
@@ -43,6 +52,12 @@ module.exports = {
         }),
         new CleanWebpackPlugin(), //3.0之前参数时数组，3.0之后参数时对象
         new webpack.HotModuleReplacementPlugin(), //热更新
+        new ExtractTextPlugin({  //打包css生成另外的文件夹
+            filename:'[name].bundle.[hash].css'
+        }),
+        new purifycssWebpack({ //消除冗余css,一定要放在htmlWebpackPlugin后面
+            paths: glob.sync(path.resolve('*.html'))
+        }),
     ],
     // 开发服务器配置
     devServer: { //配置此静态文件服务器，可以用来预览打包后项目

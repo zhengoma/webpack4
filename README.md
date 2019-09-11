@@ -86,3 +86,10 @@ one by one step to make a system
 - 安装postcss自动处理CSS3属性前缀
 > npm install --save-dev postcss-loader autoprefixer
 > touch postcss.config.js
+
+***
+
+- 打包css生成另外的文件夹
+> npm i extract-text-webpack-plugin@next --save-dev
+- 消除冗余css
+> npm i purifycss-webpack purify-css glob -D

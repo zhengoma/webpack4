@@ -1,0 +1,30 @@
+.fengcheh5{
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    background-image: url("../img/timg.jpg");
+    background-size: cover;
+}
+.hongbao{
+    width: 100px;
+    height: 100px;
+    background-image: url("../img/hongbao.gif");
+    background-size: cover;
+}
+#warp{
+    .btn{
+        background-color: red;
+        transform: rotate(350deg);
+        transition: transform;
+        display: flex;
+    }
+}
+.aaaa{                 /* 冗余css */
+    color: black;     
+}
+
+.bbbb{                 /* 冗余css */
+    width: 50px;
+    height: 50px;
+    background: yellow;
+}

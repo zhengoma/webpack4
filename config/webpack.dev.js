@@ -8,7 +8,8 @@ const glob = require('glob');
 module.exports = {
     // 入口文件
     entry: {
-        index: './src/index.js'
+        index: './src/index.js',
+        index2: './src/index2.js'
     },
     // 出口文件
     output: {
@@ -63,6 +64,12 @@ module.exports = {
         new HtmlWebpackPlugin({ //配置
             filename: 'index.html',//输出文件名
             template: './index.html',//以当前目录下的index.html文件为模板生成dist/index.html文件
+            chunks: ['vendor', 'common', 'index']
+        }),
+        new HtmlWebpackPlugin({ //配置
+            filename: 'index2.html',//输出文件名
+            template: './h5.html',//以当前目录下的index.html文件为模板生成dist/index.html文件
+            chunks: ['vendor', 'common', 'index2']
         }),
         new CleanWebpackPlugin(), //3.0之前参数时数组，3.0之后参数时对象
         new webpack.HotModuleReplacementPlugin(), //热更新
@@ -95,7 +102,7 @@ module.exports = {
                 commons: {  // 抽离自己写的公共代码
                     chunks: "initial", //async表示只从异步加载得模块（动态加载import() ）里面进行拆分; initial表示只从入口模块进行拆分; all表示以上两者都包括
                     name: "common", // 打包后的文件名，任意命名
-                    minChunks: 1,
+                    minChunks: 2,
                     minSize: 0 // 只要超出0字节就生成一个新包
                 },
                 vendor: {   // 抽离第三方插件

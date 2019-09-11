@@ -52,6 +52,10 @@ module.exports = {
                 test: /\.(htm|html)$/,
                 use: 'html-withimg-loader'
             },
+            {
+                test: /\.(eot|ttf|woff|svg)$/,
+                use: 'file-loader'
+            },
         ]
     },
     // 对应的插件

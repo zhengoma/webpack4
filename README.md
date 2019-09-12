@@ -108,4 +108,12 @@ one by one step to make a system
 ***
 
 - JS压缩
+- mode:'production' 会自动开启压缩，所以这一步不需要了
 > npm install uglifyjs-webpack-plugin --save-dev
+
+***
+
+- webpack配置拆分
+> npm i webpack-merge -D
+> touch config/webpack.common.js
+> touch config/webpack.prod.js

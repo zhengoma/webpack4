@@ -117,3 +117,8 @@ one by one step to make a system
 > npm i webpack-merge -D
 > touch config/webpack.common.js
 > touch config/webpack.prod.js
+
+***
+
+- 压缩CSS
+> npm i optimize-css-assets-webpack-plugin -D

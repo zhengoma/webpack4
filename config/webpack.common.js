@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const purifycssWebpack = require('purifycss-webpack');
 const glob = require('glob');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');//引入clean-webpack-plugin ,3.0开始需要这样写
+const optimizeCss = require('optimize-css-assets-webpack-plugin'); //压缩CSS
 module.exports = {
     // 入口文件
     entry: {
@@ -79,6 +80,7 @@ module.exports = {
         new purifycssWebpack({ //消除冗余css,一定要放在htmlWebpackPlugin后面
             paths: glob.sync(path.resolve('*.html'))
         }),
+        new optimizeCss(), //压缩CSS
     ],
     
     optimization: {

@@ -2,8 +2,8 @@
  * @Description: In User Settings Edit
  * @Author: zhengoma
  * @Date: 2019-09-06 15:06:43
- * @LastEditTime: 2019-09-06 15:23:21
- * @LastEditors: Please set LastEditors
+ * @LastEditTime : 2019-12-18 17:15:53
+ * @LastEditors  : mayuanzheng
  -->
 # webpack4demo
 one by one step to make a system
@@ -122,3 +122,8 @@ one by one step to make a system
 
 - 压缩CSS
 > npm i optimize-css-assets-webpack-plugin -D
+
+***
+
+- html2canvas
+> npm install --save html2canvas

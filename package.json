@@ -52,5 +52,8 @@
     "> 1%",
     "iOS 7",
     "last 3 iOS versions"
-  ]
+  ],
+  "dependencies": {
+    "html2canvas": "^1.0.0-rc.5"
+  }
 }

@@ -28,3 +28,24 @@
     height: 50px;
     background: yellow;
 }
+
+#barrage-input-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #dedede;
+    z-index: 1;
+    padding: 5px 20px;
+    #barrage-input{
+        width: 80%;
+        height: 30px;
+    }
+    #barrage-button{
+        color: #000;
+        width: 15%;
+        padding: 8px;
+        background-color: #ff4e4ed4;
+    }
+    
+}

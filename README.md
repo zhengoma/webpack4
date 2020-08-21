@@ -2,8 +2,8 @@
  * @Description: In User Settings Edit
  * @Author: zhengoma
  * @Date: 2019-09-06 15:06:43
- * @LastEditTime : 2019-12-18 17:15:53
- * @LastEditors  : mayuanzheng
+ * @LastEditTime: 2020-08-21 17:35:37
+ * @LastEditors: mayuanzheng
  -->
 # webpack4demo
 one by one step to make a system
@@ -127,3 +127,8 @@ one by one step to make a system
 
 - html2canvas
 > npm install --save html2canvas
+
+***
+
+- compression-webpack-plugin
+> npm install compression-webpack-plugin -D
